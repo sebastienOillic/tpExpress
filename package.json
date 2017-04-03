@@ -1,7 +1,7 @@
 {
   "name": "tp-express",
   "version": "1.0.0",
-  "description": "[DL18] Tp sur express w/ Sebastien, Toutou, Nicolas, Richard, Gullistan",
+  "description": "[DL18] Tp sur express w/ Sebastien, Toutou, Nicolas, Richard, Gulistan",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
