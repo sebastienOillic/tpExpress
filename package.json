@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sebastienOillic/tpExpress#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.3",
     "pug": "^2.0.0-beta11"
