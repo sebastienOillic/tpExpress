@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel dev --out-rep app",
-    "build:watch": "babel dev --out-rep app -watch",
+    "build": "babel dev --out-dir app",
+    "build:watch": "babel dev --out-dir app -watch",
     "start": "node app/index.js"
   },
   "repository": {
