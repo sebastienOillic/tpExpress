@@ -1,37 +1,36 @@
 {
-    "name": "tp-express",
-    "version": "1.0.0",
-    "description": "[DL18] Tp sur express w/ Sebastien, Toutou, Nicolas, Richard, Gulistan",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "babel dev --out-dir app",
-        "start:dev": "node ./app/index.js",
-        "build:watch": "babel dev --out-dir app -watch",
-        "start": "node app/index.js"
 
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/sebastienOillic/tpExpress.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/sebastienOillic/tpExpress/issues"
-    },
-    "homepage": "https://github.com/sebastienOillic/tpExpress#readme",
-    "dependencies": {
-        "body-parser": "^1.17.1",
-        "express": "^4.15.2",
-        "express-form": "^0.12.6",
-        "mongoose": "^4.9.3",
-        "pug": "^2.0.0-beta11",
-        "user-management": "^1.0.5"
-    },
-    "devDependencies": {
-        "babel-preset-es2015": "^6.24.0",
-        "babel-preset-stage-0": "^6.22.0",
-        "html2jade": "^0.8.6"
-    }
+  "name": "tp-express",
+  "version": "1.0.0",
+  "description": "[DL18] Tp sur express w/ Sebastien, Toutou, Nicolas, Richard, Gulistan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel dev --out-rep app",
+    "build:watch": "babel dev --out-rep app -watch",
+    "start": "node app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastienOillic/tpExpress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastienOillic/tpExpress/issues"
+  },
+  "homepage": "https://github.com/sebastienOillic/tpExpress#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-form": "^0.12.6",
+    "mongoose": "^4.9.3",
+    "pug": "^2.0.0-beta11",
+    "user-management": "^1.0.5"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "html2jade": "^0.8.6"
+  }
 }
