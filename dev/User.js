@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
+
+mongoose.Promise = global.Promise;
+
 export default class UserGestion{
     connect(callback){
-        mongoose.createConnection('mongodb://localhost/group2');
+        mongoose.createConnection('mongodb://162.243.195.173:27017/group2');
 
         let db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
