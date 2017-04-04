@@ -6,11 +6,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "build": "babel dev --out-rep app",
 <<<<<<< HEAD
     "build:watch": "babel dev --out-rep app -watch",
     "start": "node app/login.js"
 =======
+=======
+    "build": "babel dev --out-dir app",
+>>>>>>> 3caf71b23c347360ec0388c644c703ac65aa7485
     "build:watch": "babel --watch dev --out-dir app",
     "start": "node app/index.js"
 >>>>>>> 2663b575090a52fa1d992f2b1be9daa06d6153bf

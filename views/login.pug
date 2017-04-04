@@ -1,0 +1,15 @@
+html
+  head
+    title=title
+  body
+    h1.display-4.m-b-2 Welcome to your new mail's generator! 
+    h2.display-4.m-b-2 Connect or create an account
+    form(action="" method="post" enctype="multipart/form-data")
+      div.form-group
+        label(for="email") Email
+        input.form-control(type="email" id="email" name="email" placeholder="Enter your email address")
+      div.form-group  
+        label(for="password") Password
+        input.form-control(type="password" id="password" name="password" placeholder="Enter your password")
+      button.btn.btn-primary(type = "submit") Login
+        

@@ -4,9 +4,11 @@ import bodyParser from 'body-parser';
 
 import IndexCtrl from './controllers/IndexCtrl';
 import generatorCtrl from './controllers/GeneratorCtrl';
+import LoginCtrl from './controllers/LoginCtrl';
 
 const indexCtrl = new IndexCtrl();
 const generatorCtrl = new GeneratorCtrl();
+const LoginCtrl = new LoginCtrl();
 
 const app = express();
 
@@ -19,7 +21,8 @@ app.get('/', indexCtrl.indexAction);
 
 app.get('/generator', generatorCtrl.indexAction);
 app.post('/generator', generatorCtrl.indexActionPost);
-
+app.get('/login', LoginCtrl.loginAction);
+app.post('/login', LoginCtrl.loginActionPost);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
