@@ -2,20 +2,21 @@ import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
 
-import IndexCtrl from './controllers/IndexCtrl';
-import generatorCtrl from './controllers/GeneratorCtrl';
+import RegisterCtrl from './controllers/RegisterCtrl';
+import GeneratorCtrl from './controllers/GeneratorCtrl';
 
-const indexCtrl = new IndexCtrl();
+const registerCtrl = new RegisterCtrl();
 const generatorCtrl = new GeneratorCtrl();
 
 const app = express();
-
 const port = process.argv[2] || 8080;
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, '../views/pages'));
 
-app.get('/', indexCtrl.indexAction);
+app.get('/', registerCtrl.registerAction);
+app.post('/', registerCtrl.registerActionPost);
+
 
 app.get('/generator', generatorCtrl.indexAction);
 app.post('/generator', generatorCtrl.indexActionPost);
