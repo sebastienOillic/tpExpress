@@ -1,26 +1,29 @@
-import express from 'express'
-import pug from 'pug'
-import path from 'path'
-import bodyParser from 'body-parser'
+import express from 'express';
+import path from 'path';
+import bodyParser from 'body-parser';
 
-const app = express()
+import IndexCtrl from './controllers/IndexCtrl';
+import generatorCtrl from './controllers/GeneratorCtrl';
 
-const port = process.argv[2] || 8080
+const indexCtrl = new IndexCtrl();
+const generatorCtrl = new GeneratorCtrl();
+
+const app = express();
+
+const port = process.argv[2] || 8080;
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, '../views/pages'));
 
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'Email generator',
-        email: req.params.email,
-        password: req.params.password,
-    })
-});
+app.get('/', indexCtrl.indexAction);
+
+app.get('/generator', generatorCtrl.indexAction);
+app.post('/generator', generatorCtrl.indexActionPost);
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => {
     console.log('Server is listening on port ' + port)
-})
+});
