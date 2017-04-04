@@ -1,68 +1,82 @@
 import mongoose from 'mongoose';
 
 mongoose.Promise = global.Promise;
-
+const Schema = mongoose.Schema;
 export default class UserGestion{
     connect(callback){
-        mongoose.createConnection('mongodb://162.243.195.173:27017/group2');
-
-        let db = mongoose.connection;
+        // mongoose.createConnection('mongodb://162.243.195.173:27017/group2');
+        let db = mongoose.createConnection('mongodb://localhost:27017/account');
+        // let db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
-        db.once('open', function callback () {
-            console.log('Conntected To Mongo Database');
-            let userSchema = mongoose.Schema({
+        db.once('open', () =>{
+            console.log('Connected To Mongo Database');
+            let userSchema = new Schema({
                 username: String,
                 password: String
             });
-            User = mongoose.model(('User', userSchema));
+            mongoose.model(('User', userSchema));
+            let User = mongoose.model('User');
             callback(db, User);
         });
         
     }
     addUser(username, password){
         // mongoose.connect('mongodb://162.243.195.173:17027/group2');
-        this.connect((bd, User)=>{
+        this.connect((db, User)=>{
             User.find({name: username}, (err, user) => {
                 if (err){
-                    return console.error(err);
+                    mongoose.disconnect();
+                    console.log(err);
+                    return 0;
                 }
                 if (user != []){
-                    return console.error('User already exists!')
+                    mongoose.disconnect();
+                    console.log('User already exists!')
+                    return 0;
                 }
                 else{
                     console.log("User creation...");
-                    let newUser = new User({username: username, password, password});
-                    newUser.save((err, newuser)=>{
+                    let newUser = new User({username: username, password: password});
+                    newUser.save((err, newUser)=>{
                         if (err){
-                            return console.error(err);
+                            mongoose.disconnect();
+                            console.log(err);
+                            return 0;
                         }
                     })
                 }
             });
-            mongoose.connection.close();
         });
+        return 1;
 
     }
     checkPass(username, password){
-        this.connect((bd, User)=>{
+        this.connect((db, User)=>{
             User.find({name: username}, (err, user) => {
                 if (err){
-                    return console.error(err);
+                    mongoose.disconnect();
+                    console.log(err);
+                    return 0;
                 }
                 if (user.length != 1){
-                    return console.error('User does not exists!');
+                    mongoose.disconnect();
+                    console.log('User does not exists!');
+                    return 0;
                 }
                 else{
                     if (user[0].password != password){
-                        return console.error("Bad credentials!");
+                        mongoose.disconnect();
+                        console.log("Bad credentials!");
+                        return 0;
                     }
                     else{
-                        return console.log("Correct credentials!");
+                        console.log("Correct credentials!");
+                        mongoose.disconnect();
+                        return 1;
                     }
                 }
             });
-            mongoose.connection.close();
+            
         });
-
     }
 }
