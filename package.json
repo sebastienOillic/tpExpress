@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/babel dev --out-dir app",
+    "build:linux": "./node_modules/.bin/babel dev --out-dir app",
     "build:watch": "./node_modules/.bin/babel.cmd dev --out-dir app -watch",
     "build:windows": ".\\node_modules\\.bin\\babel.cmd dev --out-dir app",
     "start": "node app/index.js"
