@@ -19,8 +19,8 @@ app.set('views', path.join(__dirname, '../views/pages'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', registerCtrl.registerAction);
-app.post('/', registerCtrl.registerActionPost);
+app.get('/register', registerCtrl.registerAction);
+app.post('/register', registerCtrl.registerActionPost);
 app.get('/generator', generatorCtrl.generatorAction);
 app.post('/generator', generatorCtrl.generatorActionPost);
 app.get('/login', loginCtrl.loginAction);
