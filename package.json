@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel dev --out-dir app",
-    "build:watch": "babel dev --out-dir app -watch",
+    "build": "./node_modules/babel dev --out-dir app",
+    "build:watch": "./node_modules/.bin/babel.cmd dev --out-dir app -watch",
+    "build:windows": ".\\node_modules\\.bin\\babel.cmd dev --out-dir app",
     "start": "node app/index.js"
   },
   "repository": {
@@ -20,6 +21,9 @@
   },
   "homepage": "https://github.com/sebastienOillic/tpExpress#readme",
   "dependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-0": "^6.22.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "express-form": "^0.12.6",
@@ -28,8 +32,6 @@
     "user-management": "^1.0.5"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-stage-0": "^6.22.0",
     "html2jade": "^0.8.6"
   }
 }

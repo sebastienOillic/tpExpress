@@ -27,6 +27,7 @@ export default class UserGestion{
             console.log("add user");
             let query = this.User.find({username: username})
             query.exec((err, user) => {
+                console.log("test");
                 if (err){
                      
                     console.log(err);
@@ -65,7 +66,7 @@ export default class UserGestion{
             let query = this.User.find({username: username});
             // console.log(query);
             query.exec((err, user) => {
-                // console.log("test");
+                console.log("test");
                 if (err){
                      
                     console.log(err);
