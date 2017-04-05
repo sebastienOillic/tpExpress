@@ -11,16 +11,25 @@ const generatorCtrl = new GeneratorCtrl();
 const loginCtrl = new LoginCtrl();
 
 const app = express();
-const port = process.argv[2] || 8080;
-
+const port = process.argv[2] || 8081;
+//8080 pr server http
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, '../views/pages'));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/register', registerCtrl.registerAction);
-app.post('/register', registerCtrl.registerActionPost);
+//traitement des requete avant arriver au controler midleware
+
+// 1 /page principal, get: affichage, post: enovoie formulaire
+// app.get('/', registerCtrl.registerAction);
+// app.post('/', registerCtrl.registerActionPost);
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+
+app.get('/', registerCtrl.registerAction);
+app.post('/', registerCtrl.registerActionPost);
 app.get('/generator', generatorCtrl.generatorAction);
 app.post('/generator', generatorCtrl.generatorActionPost);
 app.get('/login', loginCtrl.loginAction);

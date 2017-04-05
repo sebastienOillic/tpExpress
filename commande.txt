@@ -1,0 +1,6 @@
+ouvrir mongodb
+bin mongod
+
+npm run build:watch
+
+ nodemon app/index.js

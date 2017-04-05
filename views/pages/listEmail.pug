@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+    include header.pug
+    body
+        .jumbotron
+            h1.display-4.m-b-2 #{title}
+            ul
+                each val in emailList
+                    li email : #{val.email}
+                    li password :#{val.password}
+
+
+
+
+    include footer.pug
+
+

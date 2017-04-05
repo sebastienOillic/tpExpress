@@ -7,7 +7,7 @@ export default class LoginCtrl {
       });
     } 
   loginActionPost(req, res){
-      res.render('login', {
+      res.render('generate', {
          title: "Authentification",
          email:req.body.email,
          password:req.body.password
