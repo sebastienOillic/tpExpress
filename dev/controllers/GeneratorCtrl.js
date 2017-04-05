@@ -22,6 +22,7 @@ export default class GeneratorCtrl {
 		});
 		const user = new User(req.body.firstname,req.body.lastname,req.body.domaine);
 		user.creeradresse();
+		res.download('usermail.csv', `${req.body.firstname}.${req.body.lastname}.csv`);
     }
 }
 
