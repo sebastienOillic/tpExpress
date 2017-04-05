@@ -1,15 +1,27 @@
-html
-  head
-    title=title
+doctype html
+html(lang='en')
+  include header.pug
   body
-    h1.display-4.m-b-2 Welcome to your new mail's generator! 
-    h2.display-4.m-b-2 Connect or create an account
-    form(action="" method="post" enctype="multipart/form-data")
-      div.form-group
-        label(for="email") Email
-        input.form-control(type="email" id="email" name="email" placeholder="Enter your email address")
-      div.form-group  
-        label(for="password") Password
-        input.form-control(type="password" id="password" name="password" placeholder="Enter your password")
-      button.btn.btn-primary(type = "submit") Login
-      a(href="/register") Back to register  
+
+      .container
+        h1.display-4.m-b-2 #{title}
+        .jumbotron
+                  h1.display-4.m-b-2 Welcome to your new mail's generator!
+                  h2.display-4.m-b-2 Connect or create an account
+                  form(action="" method="post" enctype="multipart/form-data")
+                    div.form-group
+                      label(for="email") Email
+                      input.form-control(type="email" id="email" name="email" placeholder="Enter your email address")
+                    div.form-group
+                      label(for="password") Password
+                      input.form-control(type="password" id="password" name="password" placeholder="Enter your password")
+                    button.btn.btn-success(type = "submit") Login
+                    p You don't have an account go to:
+                    a.button.btn.btn-primary(href="/") Registration
+
+
+
+
+
+
+  include footer.pug

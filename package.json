@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel.cmd dev --out-dir app",
-    "build:watch": "./node_modules/.bin/babel.cmd dev --out-dir app -watch",
-    "start": "node app/index.js"
-    //    "build:linux": "./node_modules/.bin/babel dev --out-dir app",
-    //    "build:windows": ".\\node_modules\\.bin\\babel.cmd dev --out-dir app"
+    "build": "babel dev --out-dir app",
+    "build:watch": "babel --watch dev --out-dir app",
+    "start": "node app/index.js",
+    "start:dev": "node app/index.js"
   },
   "repository": {
     "type": "git",

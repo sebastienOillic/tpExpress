@@ -11,7 +11,7 @@ export default class RegisterCtrl {
 
     registerActionPost(req, res) {
 
-        if (req.body.password == req.body.confirmPassword  ) {
+        if (req.body.password == req.body.confirmPassword) {
 
             let newUser = new User({
                 email: req.body.email,
@@ -22,7 +22,7 @@ export default class RegisterCtrl {
             newUser.save(function (err, newUser) {
                 if (err) {
                     // return console.error(err);
-                    res.render('index',{
+                    res.render('index', {
                         error: 'Error user not insert in DB'
                     })
                 }
@@ -33,8 +33,8 @@ export default class RegisterCtrl {
             User.find(function (err, users) {
                 if (err) return console.error(err);
                 console.log(users);
-                res.render('gen', {
-                    title: 'Check your email',
+                res.render('generate', {
+                    title: 'Adress Generator',
                     emailList: users
 
                 });
@@ -51,19 +51,3 @@ export default class RegisterCtrl {
 
     }
 }
-//         app.post('/quotes', (req, res) => {
-//             db.collection('quotes').save(req.body, (err, result) => {
-//                 if (err) return console.log(err)
-//
-//                 console.log('saved to database')
-//                 res.redirect('/')
-//             })
-//         })
-//         res.render('index', {
-//             title: 'Email generator',
-//             email: req.body.email,
-//             pw: req.body.pw,
-//             pw2: req.body.pw2,
-//         });
-//     }
-// }
