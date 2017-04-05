@@ -12,7 +12,6 @@ export default class User{
 
 	creeradresse(){
 		var tab = [
-			`${this.firstname.replace(this.firstname.charAt(0),this.firstname.charAt(0).toUpperCase())} ${this.lastname.toUpperCase()}`,
 			`${this.firstname}.${this.lastname}@${this.domaine}`.replace(' ',''),
 			`${this.firstname}${this.lastname}@${this.domaine}`.replace(' ',''),
 			`${this.firstname}.${this.lastname.charAt(0)}@${this.domaine}`.replace(' ',''),
@@ -30,6 +29,8 @@ export default class User{
 			`${this.lastname.charAt(0)}.${this.firstname.charAt(0)}@${this.domaine}`.replace(' ',''),
 			`${this.lastname.charAt(0)}${this.firstname.charAt(0)}@${this.domaine}`.replace(' ','')
 		];
+
+		fs.writeFileSync('usermail.csv', `${this.firstname.replace(this.firstname.charAt(0),this.firstname.charAt(0).toUpperCase())} ${this.lastname.toUpperCase()}`+os.EOL, 'utf8');
 
 		tab.forEach( (item,index,array) => {
 			fs.appendFileSync('usermail.csv', item+os.EOL, 'utf8');
